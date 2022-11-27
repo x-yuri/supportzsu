@@ -264,25 +264,6 @@
             $briefList.toggleClass('hidden');
             $detailedList.toggleClass('hidden');
         });
-
-        const delay = 10000;
-        let start, timeoutId;
-        $(window).on('touchstart', () => {
-            if (timeoutId) {
-                clearTimeout(timeoutId);
-            }
-            start = new Date;
-            timeoutId = setTimeout(() => {
-                $(document.body).addClass('c');
-            }, delay);
-        });
-        $(window).on('touchend', () => {
-            clearTimeout(timeoutId);
-            $(document.body).removeClass('c');
-            if (new Date - start > delay) {
-                document.cookie = 'a=1';
-            }
-        });
     </script>
 </body>
 </html>
